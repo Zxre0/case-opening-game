@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "blender": {
+      "command": "/opt/blender-env/bin/python",
+      "args": ["mcp/blender_mcp_server.py"],
+      "env": { "BLENDER_MCP_OUT": "/tmp/blender-mcp" }
+    }
+  }
+}
