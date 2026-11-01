@@ -31,3 +31,13 @@ The weapon artwork is drawn in code as a stand-in and prices are simulated. Fan 
 `mcp/blender_mcp_server.py` is a stdio MCP server that runs Blender in-process, with no Blender window needed. Its tools are `run_python`, `render` (returns the image), `scene_info`, `reset_scene`, `save_blend`, `open_blend` and `import_model`.
 
 `.mcp.json` registers it for Claude Code when this repo is opened, once `setup.sh` has been run.
+
+## Knife models
+
+`blender/knives.py` builds 19 original knife models, one for each knife type in the game: Karambit, M9 Bayonet, Bayonet, Flip, Gut, Butterfly, Talon, Ursus, Stiletto, Navaja, Skeleton, Nomad, Survival, Paracord, Falchion, Bowie, Huntsman, Shadow Daggers and Kukri. Each is modeled from the real-world knife type, not copied from game assets. They are rendered in plain steel with stock handle materials.
+
+```bash
+/opt/blender-env/bin/python blender/knives.py                    # all knives -> renders/knives/<name>.png + .blend
+/opt/blender-env/bin/python blender/knives.py karambit kukri     # only some
+/opt/blender-env/bin/python blender/contact_sheet.py             # renders/knives_sheet.png
+```
