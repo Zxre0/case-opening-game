@@ -41,3 +41,14 @@ The weapon artwork is drawn in code as a stand-in and prices are simulated. Fan 
 /opt/blender-env/bin/python blender/knives.py karambit kukri     # only some
 /opt/blender-env/bin/python blender/contact_sheet.py             # renders/knives_sheet.png
 ```
+
+## Knife skins in the game
+
+`blender/skins.py` renders every knife skin in the game (41 of them) with a procedural finish named after the in-game finish (Fade, Doppler, Crimson Web and so on). It writes them to `renders/skins/<skin id>.webp` along with `renders/skins/manifest.js`, which `index.html` loads. Items without a render, such as gloves and guns, use the drawn artwork. If a render fails to load, that card falls back to the drawing.
+
+```bash
+/opt/blender-env/bin/python blender/skins.py                  # all knife skins
+/opt/blender-env/bin/python blender/skins.py chroma-gold0     # one skin
+```
+
+The game needs to be served over HTTP (GitHub Pages, or `python3 -m http.server`) for the renders to load. Opened straight from disk, it shows the drawings instead.
